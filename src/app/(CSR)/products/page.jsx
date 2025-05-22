@@ -4,12 +4,9 @@ export const metadata = {
 };
 export const dynamic = "force-dynamic";
 export const getProducts = async () => {
-  const res = await fetch(
-    `https://first-nextjs-app-bice.vercel.app/api/products`,
-    {
-      cache: "force-cache",
-    }
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, {
+    cache: "force-cache",
+  });
   const data = res.json();
   return data;
 };
