@@ -9,7 +9,7 @@ export default function AddProductForm() {
     const form = e.target;
     const title = form.title.value;
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
+      `https://first-nextjs-app-bice.vercel.app/api/products`,
       {
         method: "POST",
         headers: {
