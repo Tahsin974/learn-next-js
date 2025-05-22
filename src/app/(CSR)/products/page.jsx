@@ -2,6 +2,7 @@ import Products from "./components/Products";
 export const metadata = {
   title: "Products",
 };
+export const dynamic = "force-dynamic";
 export const getProducts = async () => {
   const res = await fetch("http://localhost:3000/api/products", {
     cache: "force-cache",
