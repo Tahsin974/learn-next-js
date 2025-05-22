@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 
 export default function AddProductForm() {
   const router = useRouter();
+  const { NEXT_PUBLIC_BASE_URL } = process.env;
+  console.log(NEXT_PUBLIC_BASE_URL);
   const handleAddProduct = async (e) => {
     e.preventDefault();
     const form = e.target;
