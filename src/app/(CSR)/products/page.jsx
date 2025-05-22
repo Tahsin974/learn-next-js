@@ -4,6 +4,7 @@ export const metadata = {
 };
 export const dynamic = "force-dynamic";
 export const getProducts = async () => {
+  console.log(process.env.NEXT_PUBLIC_BASE_URL);
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, {
     cache: "force-cache",
   });
