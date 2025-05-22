@@ -8,13 +8,16 @@ export default function AddProductForm() {
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
-    const res = await fetch("http://localhost:3000/api/products", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ title }),
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ title }),
+      }
+    );
     const data = await res.json();
     form.reset();
     router.push("/products");
